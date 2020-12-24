@@ -132,6 +132,7 @@ int main()
                 case SDL_SCANCODE_UP :p=1;break;
                 case SDL_SCANCODE_DOWN :p=0;break;
                 case SDL_SCANCODE_RETURN :close_requested = 1;break;
+                default: // do nothing ;
                 }
              break;
              }
@@ -182,6 +183,7 @@ int main()
                  hc[i] = SDL_CreateTextureFromSurface(rend, surface);
                  SDL_FreeSurface(surface);
                  SDL_QueryTexture(hc[i], NULL, NULL, &hco[i].w, &hco[i].h);break;
+        default : break;
         }
         }
     for(i=0;i<5;i++)
@@ -272,6 +274,8 @@ int main()
                       blur(0,31);up=0;down=0;right=0;left=0;
                       SDL_DestroyTexture(tex4);
                       break;
+                  default :
+                      break;
                 }
                 break;
             case SDL_KEYUP:                                                                          // keyboard API for key up
@@ -293,8 +297,11 @@ int main()
                 case SDL_SCANCODE_RIGHT:
                     right = 0;
                     break;
+                default :
+                    break;
                 }
                 break;
+                    
             }
         }
         d5=score;
@@ -343,6 +350,8 @@ int main()
                  sc[i] = SDL_CreateTextureFromSurface(rend, surface);
                  SDL_FreeSurface(surface);
                  SDL_QueryTexture(sc[i], NULL, NULL, &sco[i].w, &sco[i].h);break;
+        default :
+                break;
         }
         }
 
@@ -508,6 +517,7 @@ int main()
                  sc[i] = SDL_CreateTextureFromSurface(rend, surface);
                  SDL_FreeSurface(surface);
                  SDL_QueryTexture(sc[i], NULL, NULL, &sco[i].w, &sco[i].h);break;
+        default : break;       
         }
         }
     for(i=0;i<5;i++)
@@ -558,6 +568,7 @@ int main()
                  hc[i] = SDL_CreateTextureFromSurface(rend, surface);
                  SDL_FreeSurface(surface);
                  SDL_QueryTexture(hc[i], NULL, NULL, &hco[i].w, &hco[i].h);break;
+        default : break;
         }
         }
     for(i=0;i<5;i++)
